@@ -4,6 +4,7 @@ import (
 	"io/ioutil"
 	"path/filepath"
 	"gopkg.in/yaml.v1"
+	"log"
 )
 
 type DBconfig struct {
@@ -24,13 +25,13 @@ func getDBconfig() *DBconfig {
 	yamlFile, err := ioutil.ReadFile(filename)
 
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 
 	var c *DBconfig
 	err = yaml.Unmarshal(yamlFile, &c)
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	return c
 }
@@ -39,13 +40,13 @@ func getETCDconfig() *ETCDconfig {
 	filename, err := filepath.Abs("./config/ETCDconfig.yml")
 	yamlFile, err := ioutil.ReadFile(filename)
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 
 	var c *ETCDconfig
 	err = yaml.Unmarshal(yamlFile, &c)
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	return c
 }
