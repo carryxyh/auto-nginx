@@ -3,6 +3,48 @@
 	"ignore": "test",
 	"package": [
 		{
+			"checksumSHA1": "Zgqp9pp3G4cSZbepa6tzhNeHZOI=",
+			"path": "github.com/coreos/etcd/client",
+			"revision": "c90c757a56b0f1d28397ee0ed4cbdc88c5926ed5",
+			"revisionTime": "2017-02-22T00:15:22Z"
+		},
+		{
+			"checksumSHA1": "mKIXx1kDwmVmdIpZ3pJtRBuUKso=",
+			"path": "github.com/coreos/etcd/pkg/pathutil",
+			"revision": "c90c757a56b0f1d28397ee0ed4cbdc88c5926ed5",
+			"revisionTime": "2017-02-22T00:15:22Z"
+		},
+		{
+			"checksumSHA1": "rMyIh9PsSvPs6Yd+YgKITQzQJx8=",
+			"path": "github.com/coreos/etcd/pkg/tlsutil",
+			"revision": "c90c757a56b0f1d28397ee0ed4cbdc88c5926ed5",
+			"revisionTime": "2017-02-22T00:15:22Z"
+		},
+		{
+			"checksumSHA1": "45jhT/Qs5OuOJYSO9v27kQSKwWk=",
+			"path": "github.com/coreos/etcd/pkg/transport",
+			"revision": "c90c757a56b0f1d28397ee0ed4cbdc88c5926ed5",
+			"revisionTime": "2017-02-22T00:15:22Z"
+		},
+		{
+			"checksumSHA1": "gx1gJIMU6T0UNQ0bPZ/drQ8cpCI=",
+			"path": "github.com/coreos/etcd/pkg/types",
+			"revision": "c90c757a56b0f1d28397ee0ed4cbdc88c5926ed5",
+			"revisionTime": "2017-02-22T00:15:22Z"
+		},
+		{
+			"checksumSHA1": "sp2FkEyaIGiQFOEZCTDkBZgyHOs=",
+			"path": "github.com/coreos/etcd/version",
+			"revision": "c90c757a56b0f1d28397ee0ed4cbdc88c5926ed5",
+			"revisionTime": "2017-02-22T00:15:22Z"
+		},
+		{
+			"checksumSHA1": "nux9tCYmTA5bOCVODF3Rqzcu60U=",
+			"path": "github.com/coreos/go-semver/semver",
+			"revision": "5e3acbb5668c4c3deb4842615c4098eb61fb6b1e",
+			"revisionTime": "2017-02-09T20:17:57Z"
+		},
+		{
 			"checksumSHA1": "UsILDoIB2S7ra+w2fMdb85mX3HM=",
 			"path": "github.com/gin-gonic/gin/binding",
 			"revision": "e2212d40c62a98b388a5eb48ecbdcf88534688ba",
@@ -33,6 +75,12 @@
 			"revisionTime": "2017-02-16T23:59:08Z"
 		},
 		{
+			"checksumSHA1": "CoxdaTYdPZNJXr8mJfLxye428N0=",
+			"path": "github.com/ugorji/go/codec",
+			"revision": "c88ee250d0221a57af388746f5cf03768c21d6e2",
+			"revisionTime": "2017-02-15T20:11:44Z"
+		},
+		{
 			"checksumSHA1": "hT+7DPyl8tQ96kUXW3Sr5o0Pcj0=",
 			"path": "gopkg.in/gin-gonic/gin.v1",
 			"revision": "e2212d40c62a98b388a5eb48ecbdcf88534688ba",
@@ -43,6 +91,12 @@
 			"path": "gopkg.in/go-playground/validator.v8",
 			"revision": "5f57d2222ad794d0dffb07e664ea05e2ee07d60c",
 			"revisionTime": "2016-07-18T13:41:25Z"
+		},
+		{
+			"checksumSHA1": "MGk7cSnHqiL5soaovzgcJaNH3fc=",
+			"path": "gopkg.in/yaml.v1",
+			"revision": "9f9df34309c04878acc86042b16630b0f696e1de",
+			"revisionTime": "2014-09-24T16:16:07Z"
 		},
 		{
 			"checksumSHA1": "0KwOlQV1dNUh9X8t+5s7nX5bqfk=",
