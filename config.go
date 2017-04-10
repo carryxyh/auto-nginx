@@ -7,11 +7,16 @@ import (
 )
 
 type DBconfig struct {
-
+	Listen    string `yaml:"listen"`
+	EndPoints []string `yaml:"endpoints"`
+	BasePath  string   `yaml:"base_path"`
 }
 
 type ETCDconfig struct {
-
+	Alias      string `yaml:"alias"`
+	DriverName string `yaml:"drive_name"`
+	DataSource string `yaml:"data_source"`
+	Conns      []int `yaml:"conns"`
 }
 
 func getDBconfig() *DBconfig {

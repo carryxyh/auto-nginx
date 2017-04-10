@@ -1,0 +1,9 @@
+alias: "auto-ng"
+
+drive_name: "mysql"
+
+data_source: "root:root@/auto-ng?charset=utf8"
+
+conns:
+  - 20
+  - 30

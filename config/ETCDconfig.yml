@@ -1,0 +1,6 @@
+listen: "0.0.0.0:8000"
+
+base_path: "/"
+
+endpoints:
+  - "http://127.0.0.1:2379"

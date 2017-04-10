@@ -6,12 +6,12 @@ import (
 )
 
 type  Template struct {
-	Id int
+	Id          int
 	ProjectName string `orm:"size(50)"`
-	Content string `orm:"size(200)"`
-
+	Content     string `orm:"size(200)"`
 }
 
 func init() {
-
+	orm.RegisterDriver("mysql", orm.DRMySQL)
+	//orm.RegisterDataBase()
 }
