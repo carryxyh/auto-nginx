@@ -7,3 +7,5 @@ data_source: "root:root@/auto-ng?charset=utf8"
 conns:
   - 20
   - 30
+
+create_table: "true"

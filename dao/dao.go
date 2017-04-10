@@ -26,7 +26,9 @@ func init() {
 
 	orm.RegisterModel(new(Template))
 
-	orm.RunSyncdb(db.Alias, false, true)
+	if db.CreateTable {
+		orm.RunSyncdb(db.Alias, false, true)
+	}
 
 	ormer = orm.NewOrm()
 }
