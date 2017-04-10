@@ -59,13 +59,13 @@ func getKapi() client.KeysAPI {
 
 func getTransport() (*http.Transport, error) {
 	if globalCaFile == "" {
-		globalCaFile = os.Getenv("DCMP_CA_FILE")
+		globalCaFile = os.Getenv("CA_FILE")
 	}
 	if globalCertFile == "" {
-		globalCertFile = os.Getenv("DCMP_CERT_FILE")
+		globalCertFile = os.Getenv("CERT_FILE")
 	}
 	if globalKeyFile == "" {
-		globalKeyFile = os.Getenv("DCMP_KEY_FILE")
+		globalKeyFile = os.Getenv("KEY_FILE")
 	}
 
 	tls := transport.TLSInfo{
