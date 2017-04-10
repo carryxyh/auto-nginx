@@ -31,6 +31,9 @@ func init() {
 	ormer = orm.NewOrm()
 }
 
+/**
+	根据id查询
+ */
 func QueryById(id int) Template {
 	t := Template{Id: id}
 	err := ormer.Read(&t)
@@ -40,7 +43,10 @@ func QueryById(id int) Template {
 	return t
 }
 
-func Insert(tmpl *Template) int {
+/**
+	插入一条模板
+ */
+func Insert(tmpl Template) int {
 	id, err := ormer.Insert(&tmpl)
 	if err != nil {
 		panic(err)
@@ -48,6 +54,9 @@ func Insert(tmpl *Template) int {
 	return id
 }
 
+/**
+	根据id删除
+ */
 func DeleteById(id int) bool {
 	t := Template{Id: id}
 	num, err := ormer.Delete(&t)
@@ -57,7 +66,10 @@ func DeleteById(id int) bool {
 	return num == 1
 }
 
-func Update(tmpl *Template) bool {
+/**
+	更新一条数据
+ */
+func Update(tmpl Template) bool {
 	num, err := ormer.Update(&tmpl)
 	if err != nil {
 		panic(err)
