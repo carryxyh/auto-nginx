@@ -1,6 +1,9 @@
-listen: "0.0.0.0:8000"
-
 base_path: "/"
+
+# etcd ssl support config
+# ca_file: "/path/to/ca.crt"
+# cert_file: "/path/to/client.crt"
+# key_file: "/path/to/client.key"
 
 endpoints:
   - "http://127.0.0.1:2379"

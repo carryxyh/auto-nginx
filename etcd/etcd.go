@@ -9,6 +9,7 @@ import (
 	"os"
 	"github.com/coreos/etcd/pkg/transport"
 	"context"
+	"auto-ng/config"
 )
 
 var globalEndpoints []string
@@ -22,11 +23,12 @@ var globalKapi client.KeysAPI
 	初始化 etcd客户端的一些链接设置等等
  */
 
-func InitConfig(endpoints []string, caFile string, certFile string, keyFile string) {
-	globalEndpoints = endpoints
-	globalCaFile = caFile
-	globalCertFile = certFile
-	globalKeyFile = keyFile
+func InitConfig() {
+	cfg := config.GetETCDconfig()
+	globalEndpoints = cfg.EndPoints
+	globalCaFile = cfg.CaFile
+	globalCertFile = cfg.CertFile
+	globalKeyFile = cfg.KeyFile
 }
 
 /**

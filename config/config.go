@@ -15,9 +15,11 @@ type DBconfig struct {
 }
 
 type ETCDconfig struct {
-	Listen    string `yaml:"listen"`
 	EndPoints []string `yaml:"endpoints"`
 	BasePath  string   `yaml:"base_path"`
+	CaFile    string `yaml:"ca_file"`
+	CertFile  string `yaml:"cert_file"`
+	KeyFile   string `yaml:"key_file"`
 }
 
 func GetDBconfig() *DBconfig {
