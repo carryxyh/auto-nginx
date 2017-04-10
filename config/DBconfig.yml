@@ -4,6 +4,7 @@ drive_name: "mysql"
 
 data_source: "root:root@/auto-ng?charset=utf8"
 
+#第一个值是：最大空闲连接数 第二个值是：最大打开的连接数
 conns:
   - 20
   - 30
