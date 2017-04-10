@@ -44,6 +44,16 @@ func QueryById(id int) Template {
 }
 
 /**
+	查询所有的记录
+ */
+func QueryAll() []*Template {
+	var t []*Template
+	qs := ormer.QueryTable("template")
+	qs.All(&t)
+	return t
+}
+
+/**
 	插入一条模板
  */
 func Insert(tmpl Template) int {

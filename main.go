@@ -7,7 +7,7 @@ import (
 
 func main() {
 	router := gin.Default()
-	router.GET("/test1", api.TestFunc1)
-	router.POST("/test2", api.TestFunc2)
+	router.GET("/list", api.TestFunc1)
+	router.POST("/insert", api.TestFunc2)
 	router.Run(":8003")
 }
