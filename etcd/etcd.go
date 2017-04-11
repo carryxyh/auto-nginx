@@ -23,7 +23,7 @@ var globalKapi client.KeysAPI
 	初始化 etcd客户端的一些链接设置等等
  */
 
-func InitConfig() {
+func init() {
 	cfg := config.GetETCDconfig()
 	globalEndpoints = cfg.EndPoints
 	globalCaFile = cfg.CaFile
