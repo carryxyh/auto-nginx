@@ -24,6 +24,8 @@ func init() {
 
 	orm.RegisterDataBase(db.Alias, db.DriverName, db.DataSource, db.MaxIdleConns, db.MaxOpenConns)
 
+	orm.RegisterDataBase("default", db.DriverName, db.DataSource, db.MaxIdleConns, db.MaxOpenConns)
+
 	orm.RegisterModel(new(Template))
 
 	if db.CreateTable {

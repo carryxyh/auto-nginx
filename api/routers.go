@@ -35,7 +35,7 @@ func List(c *gin.Context) {
 	if errJ != nil {
 		log.Fatal(err)
 	}
-	c.String(http.StatusOK, b)
+	c.String(http.StatusOK, string(b))
 }
 
 func Insert(c *gin.Context) {
