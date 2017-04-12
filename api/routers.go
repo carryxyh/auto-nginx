@@ -9,6 +9,7 @@ import (
 	"log"
 	"auto-ng/etcd"
 	"github.com/coreos/etcd/client"
+	"auto-ng/config"
 )
 
 func ListAll(c *gin.Context) {
@@ -98,5 +99,15 @@ func Delete(c *gin.Context) {
 }
 
 func QueryETCDKeyList(c *gin.Context) {
-
+	conf := config.GetETCDconfig()
+	response, err := etcd.QueryKeyList(conf.BasePath)
+	if err != nil {
+		log.Fatal(err)
+	}
+	n := response.Node
+	b, errJ := json.Marshal(n)
+	if errJ != nil {
+		log.Fatal(err)
+	}
+	c.String(http.StatusOK, string(b))
 }
