@@ -16,6 +16,8 @@ var db *config.DBconfig
 
 var ormer orm.Ormer
 
+var defaultAlias = "default"
+
 func init() {
 
 	db = config.GetDBconfig()
@@ -24,7 +26,7 @@ func init() {
 
 	orm.RegisterDataBase(db.Alias, db.DriverName, db.DataSource, db.MaxIdleConns, db.MaxOpenConns)
 
-	orm.RegisterDataBase("default", db.DriverName, db.DataSource, db.MaxIdleConns, db.MaxOpenConns)
+	orm.RegisterDataBase(defaultAlias, db.DriverName, db.DataSource, db.MaxIdleConns, db.MaxOpenConns)
 
 	orm.RegisterModel(new(Template))
 
