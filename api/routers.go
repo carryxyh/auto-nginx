@@ -7,9 +7,13 @@ import (
 	"encoding/json"
 	"strconv"
 	"log"
+	"auto-ng/etcd"
+	"github.com/coreos/etcd/client"
 )
 
 func ListAll(c *gin.Context) {
+
+	//db操作
 	var tmpls []*dao.Template
 	tmpls = dao.QueryAll()
 	b, err := json.Marshal(&tmpls)
@@ -20,6 +24,8 @@ func ListAll(c *gin.Context) {
 }
 
 func List(c *gin.Context) {
+
+	//db操作
 	id := c.Param("id")
 	iId, err := strconv.Atoi(id)
 	if err != nil {
@@ -34,15 +40,22 @@ func List(c *gin.Context) {
 }
 
 func Insert(c *gin.Context) {
+
+	//db操作
 	pjname := c.Param("pjname")
 	content := c.Param("content")
 
 	t := dao.Template{ProjectName:pjname, Content:content}
 	id := dao.Insert(t)
 	c.String(http.StatusOK, string(id))
+
+	//etcd操作
+	etcd.UpdateKey(pjname, content)
 }
 
 func Update(c *gin.Context) {
+
+	//db操作
 	id := c.Param("id")
 	iId, err := strconv.Atoi(id)
 	if err != nil {
@@ -58,9 +71,14 @@ func Update(c *gin.Context) {
 	} else {
 		c.String(http.StatusInternalServerError, "insert failed !")
 	}
+
+	//etcd操作
+	etcd.UpdateKey(pjname, content)
 }
 
 func Delete(c *gin.Context) {
+
+	//db操作
 	id := c.Param("id")
 	iId, err := strconv.Atoi(id)
 	if err != nil {
@@ -72,4 +90,9 @@ func Delete(c *gin.Context) {
 	} else {
 		c.String(http.StatusInternalServerError, "insert failed !")
 	}
+
+	//etcd操作
+	pjname := c.Param("pjname")
+	opts := client.DeleteOptions{}
+	etcd.DeleteKey(pjname, &opts)
 }
