@@ -96,3 +96,7 @@ func Delete(c *gin.Context) {
 	opts := client.DeleteOptions{}
 	etcd.DeleteKey(pjname, &opts)
 }
+
+func QueryETCDKeyList(c *gin.Context) {
+
+}

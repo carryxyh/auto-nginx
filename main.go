@@ -12,5 +12,6 @@ func main() {
 	router.POST("/insert", api.Insert)
 	router.POST("/update", api.Update)
 	router.POST("/delete", api.Delete)
+	router.GET("/etcdKeyList", api.QueryETCDKeyList)
 	router.Run(":8003")
 }
