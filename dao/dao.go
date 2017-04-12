@@ -22,7 +22,7 @@ func init() {
 
 	orm.RegisterDriver("mysql", orm.DRMySQL)
 
-	orm.RegisterDataBase(db.Alias, db.DriverName, db.DataSource, db.Conns)
+	orm.RegisterDataBase(db.Alias, db.DriverName, db.DataSource, db.MaxIdleConns, db.MaxOpenConns)
 
 	orm.RegisterModel(new(Template))
 
@@ -58,7 +58,7 @@ func QueryAll() []*Template {
 /**
 	插入一条模板
  */
-func Insert(tmpl Template) int {
+func Insert(tmpl Template) int64 {
 	id, err := ormer.Insert(&tmpl)
 	if err != nil {
 		panic(err)

@@ -7,7 +7,10 @@ import (
 
 func main() {
 	router := gin.Default()
-	router.GET("/list", api.TestFunc1)
-	router.POST("/insert", api.TestFunc2)
+	router.GET("/listAll", api.ListAll)
+	router.GET("/list/:id", api.List)
+	router.POST("/insert", api.Insert)
+	router.POST("/update", api.Update)
+	router.POST("/delete", api.Delete)
 	router.Run(":8003")
 }

@@ -8,11 +8,12 @@ import (
 )
 
 type DBconfig struct {
-	Alias       string `yaml:"alias"`
-	DriverName  string `yaml:"drive_name"`
-	DataSource  string `yaml:"data_source"`
-	Conns       []int `yaml:"conns"`
-	CreateTable bool `yaml:"create_table"`
+	Alias        string `yaml:"alias"`
+	DriverName   string `yaml:"drive_name"`
+	DataSource   string `yaml:"data_source"`
+	MaxIdleConns int `yaml:"max_idle_conns"`
+	MaxOpenConns int `yaml:"max_open_conns"`
+	CreateTable  bool `yaml:"create_table"`
 }
 
 type ETCDconfig struct {
