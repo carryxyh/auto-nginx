@@ -1,4 +1,4 @@
-base_path: "/auto-ng"
+base_path: "/auto-ng/"
 
 # etcd ssl support config
 # ca_file: "/path/to/ca.crt"
