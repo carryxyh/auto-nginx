@@ -12,6 +12,9 @@ import (
 	"auto-ng/config"
 )
 
+/**
+	列出所有的模板
+ */
 func ListAll(c *gin.Context) {
 
 	//db操作
@@ -24,6 +27,9 @@ func ListAll(c *gin.Context) {
 	c.String(http.StatusOK, string(b))
 }
 
+/**
+	根据id列出某一个模板
+ */
 func List(c *gin.Context) {
 
 	//db操作
@@ -40,6 +46,9 @@ func List(c *gin.Context) {
 	c.String(http.StatusOK, string(b))
 }
 
+/**
+	插入
+ */
 func Insert(c *gin.Context) {
 
 	//db操作
@@ -54,6 +63,9 @@ func Insert(c *gin.Context) {
 	etcd.UpdateKey(pjname, content)
 }
 
+/**
+	更新模板
+ */
 func Update(c *gin.Context) {
 
 	//db操作
@@ -77,6 +89,9 @@ func Update(c *gin.Context) {
 	etcd.UpdateKey(pjname, content)
 }
 
+/**
+	删除模板
+ */
 func Delete(c *gin.Context) {
 
 	//db操作
@@ -98,6 +113,9 @@ func Delete(c *gin.Context) {
 	etcd.DeleteKey(pjname, &opts)
 }
 
+/**
+	查看etcd中所有键
+ */
 func QueryETCDKeyList(c *gin.Context) {
 	conf := config.GetETCDconfig()
 	response, err := etcd.QueryKeyList(conf.BasePath)
