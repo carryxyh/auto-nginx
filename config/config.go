@@ -24,6 +24,9 @@ type ETCDconfig struct {
 	KeyFile   string `yaml:"key_file"`
 }
 
+/**
+	获取数据库配置
+ */
 func GetDBconfig() *DBconfig {
 	filename, _ := filepath.Abs("./config/DBconfig.yml")
 	yamlFile, err := ioutil.ReadFile(filename)
@@ -40,6 +43,9 @@ func GetDBconfig() *DBconfig {
 	return c
 }
 
+/**
+	获取etcd配置
+ */
 func GetETCDconfig() *ETCDconfig {
 	filename, err := filepath.Abs("./config/ETCDconfig.yml")
 	yamlFile, err := ioutil.ReadFile(filename)
