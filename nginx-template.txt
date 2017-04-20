@@ -1,0 +1,11 @@
+location /#ROUTER_PATH#/ {
+    rewrite ^/#ROUTER_PATH#/ma/order/([0-9a-zA-Z]+)/([0-9a-zA-Z]+)/([0-9a-zA-Z]+) /#ROUTER_PATH#/s/$1/$2/$3 last;
+    rewrite ^/#ROUTER_PATH#/ma/shop/([0-9a-zA-Z]+)/([0-9a-zA-Z]+) /#ROUTER_PATH#/s/$1/$2 last;
+    rewrite ^/#ROUTER_PATH#/ma/order/([0-9a-zA-Z]+)$ /#ROUTER_PATH#/g/$1 last;
+    rewrite ^/#ROUTER_PATH#/ma/menu/([0-9a-zA-Z]+)/([0-9a-zA-Z]+)/([0-9a-zA-Z]+) /#ROUTER_PATH#//m/$1/$2/$3 last;
+    proxy_set_header   Host             $host;
+    proxy_set_header  X-Real-IP  $remote_addr;
+    proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+    proxy_intercept_errors on;
+    proxy_pass http://10.1.5.184:8080/weixin-meal/;
+}
