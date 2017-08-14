@@ -58,7 +58,6 @@ func getKapi() client.KeysAPI {
 /**
 	获取transport
  */
-
 func getTransport() (*http.Transport, error) {
 	if globalCaFile == "" {
 		globalCaFile = os.Getenv("CA_FILE")
